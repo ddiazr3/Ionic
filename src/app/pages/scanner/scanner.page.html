@@ -1,0 +1,9 @@
+<app-header title="Scanner"></app-header>
+
+<ion-content class="showInfo">
+  <br />
+  <ion-button *ngIf="showBtn" expand="block" (click)="scan()">Start scanner</ion-button>
+  <ion-item *ngIf="scanResult !== null">
+    <ion-label class="ion-text-wrap">Resultado: {{scanResult}}</ion-label>
+  </ion-item>
+</ion-content>

@@ -1,0 +1,14 @@
+<app-header title="Card"></app-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-card>
+      <img alt="Silhouette of mountains" [src]="rm.image" />
+      <ion-card-header>
+        <ion-card-title>{{rm.name}}</ion-card-title>
+        <ion-card-subtitle>{{rm.status}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content> {{rm.species}} </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

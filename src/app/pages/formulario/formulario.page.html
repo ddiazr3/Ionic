@@ -1,0 +1,77 @@
+<app-header title="Formulario"></app-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <form [formGroup]="personales" (submit)="createData()">
+      <ion-grid>
+        <ion-row>
+          <ion-col sizeLg="6" sizeXl="6" sizeMd="12" sizeSm="12" sizeXs="12">
+            <ion-input
+              label="Nombre"
+              labelPlacement="floating"
+              [counter]="true"
+              maxlength="20"
+              formControlName="nombre"
+            ></ion-input>
+          </ion-col>
+          <ion-col sizeLg="6" sizeXl="6" sizeMd="12" sizeSm="12" sizeXs="12">
+            <ion-item>
+              <ion-label>Apellido:</ion-label>
+              <ion-input type="text" placeholder="Ingrese Nombre"  formControlName="apellido"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col sizeLg="6" sizeXl="6" sizeMd="12" sizeSm="12" sizeXs="12">
+            <ion-item>
+              <ion-radio-group value="masculino">
+                <ion-radio
+                  value="masculino"
+                  aria-label="Secondary"
+                  color="secondary"
+                  >Masculino</ion-radio
+                ><br />
+                <ion-radio
+                  value="femenino"
+                  aria-label="Secondary"
+                  color="secondary"
+                  >Femenino</ion-radio
+                >
+              </ion-radio-group>
+            </ion-item>
+          </ion-col>
+          <ion-col sizeLg="6" sizeXl="6" sizeMd="12" sizeSm="12" sizeXs="12">
+            <ion-item>
+              <ion-checkbox justify="start" formControlName="mayor">Es mayor de edad</ion-checkbox>
+            </ion-item>
+          </ion-col>
+          <ion-col sizeLg="6" sizeXl="6" sizeMd="12" sizeSm="12" sizeXs="12">
+            <ion-item>
+              <ion-datetime presentation="date" formControlName="fechaNac"></ion-datetime>
+            </ion-item>
+          </ion-col>
+
+          <ion-col sizeLg="6" sizeXl="6" sizeMd="12" sizeSm="12" sizeXs="12">
+            <ion-label>Ingrese Dirección:</ion-label>
+            <ion-textarea placeholder="Dirección...." [autoGrow]="true" formControlName="direccion">
+            </ion-textarea>
+          </ion-col>
+          <ion-col sizeLg="6" sizeXl="6" sizeMd="12" sizeSm="12" sizeXs="12">
+            <ion-list>
+              <ion-item>
+                <ion-select aria-label="fruit" placeholder="Fruta Fav." formControlName="fruta">
+                  <ion-select-option value="apples">Apples</ion-select-option>
+                  <ion-select-option value="oranges">Oranges</ion-select-option>
+                  <ion-select-option value="bananas">Bananas</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+        <ion-button type="submit">
+          <ion-icon name="save"></ion-icon>
+        </ion-button>
+      </ion-fab>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,25 @@
+<app-header title="Lista">
+
+</app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div id="container">
+    <ion-searchbar (ionInput)="handleInput($event)"></ion-searchbar>
+
+    <ion-list *ngFor="let rm of listRickandMortyApy">
+      <ion-item>
+        <ion-avatar slot="end">
+          <img [src]="rm.image" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{rm.name}}</h2>
+          <h3>species: {{rm.species}}</h3>
+          <p>status: {{rm.status}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

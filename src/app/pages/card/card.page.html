@@ -1,0 +1,23 @@
+<app-header title="Card"></app-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+
+    <ion-grid [fixed]="true" >
+      <ion-row >
+        <ion-col sizeXs="12" sizeMd="6" sizeSm="6" sizeLg="4" *ngFor="let rm of listRickandMortyApy">
+          <ion-card >
+            <img alt="Silhouette of mountains" [src]="rm.image" [routerLink]="['/card',rm.id]" />
+            <ion-card-header (click)="presentAlert1()">
+              <ion-card-title>{{rm.name}}</ion-card-title>
+              <ion-card-subtitle>{{rm.status}}</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content (click)="presentToast1()">
+              {{rm.species}}
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

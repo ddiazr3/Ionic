@@ -1,0 +1,18 @@
+<app-header title="Generador de código"></app-header>
+
+<ion-content class="showInfo">
+    <ion-card>
+      <ion-card-header>
+        <ion-input label="Ingrese Codigo" [(ngModel)]="myAngularxQrCode"   label-placement="floating" fill="solid" placeholder="Ingrese Còdigo"></ion-input>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Cóodigo a generar: {{myAngularxQrCode}}</p>
+        <br>
+        <qrcode
+          [qrdata]="myAngularxQrCode"
+          [width]="256"
+          [errorCorrectionLevel]="'M'"
+        ></qrcode>
+      </ion-card-content>
+    </ion-card>
+</ion-content>
